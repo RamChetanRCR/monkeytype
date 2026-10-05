@@ -216,6 +216,10 @@ export function CustomTextModal(): JSXElement {
     );
   };
 
+  const applyLowercase = () => {
+    form.setFieldValue("text", form.getFieldValue("text").toLowerCase());
+  };
+
   const applyRemoveFancyTypography = () => {
     form.setFieldValue(
       "text",
@@ -729,6 +733,19 @@ export function CustomTextModal(): JSXElement {
                 text="apply"
                 class="w-full"
                 onClick={applyRemoveZeroWidth}
+              />
+            </SettingsGroup>
+
+            <SettingsGroup
+              title="Convert to lowercase"
+              icon="fa-font"
+              sub="Convert all text to lowercase."
+            >
+              <Button
+                variant="button"
+                text="apply"
+                class="w-full"
+                onClick={applyLowercase}
               />
             </SettingsGroup>
 
